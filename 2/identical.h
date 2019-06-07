@@ -1,0 +1,1 @@
+int identical( int a[], int b[], unsigned int len);

@@ -1,0 +1,1 @@
+int scrambled( unsigned int a[], unsigned int b[], unsigned int len);
