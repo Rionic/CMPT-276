@@ -7,9 +7,9 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= image_tag("logo/SFU_campus_1.jpg", class: "first-slide d-block w-100", alt: "First slide") %>
+      <div class="carousel-inner" style="height: auto; object-fit: contain;">
+        <div class="carousel-item active" style= "height: 506px">
+          <%= image_tag("logo/SFU_campus_1.jpg", class: "first-slide d-block w-100 .img-fluid", alt: "First slide") %>
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>Example headline.</h1>
@@ -18,7 +18,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" style= "height: 506px">
           <%= image_tag("logo/SFU_campus_2.jpg", class: "second-slide d-block w-100", alt: "Second slide") %>
           <div class="container">
             <div class="carousel-caption">
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" style= "height: 506px">
           <%= image_tag("logo/students.jpg", class: "third-slide d-block w-100", alt: "Third slide") %>
           <div class="container">
             <div class="carousel-caption text-right">
@@ -55,7 +55,7 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
+      <br/>
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
