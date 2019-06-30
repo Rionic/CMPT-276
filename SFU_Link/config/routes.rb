@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'pages/about', to: 'pages#about'
   get 'pages/contact', to: 'pages#contact'
   get 'pages/login', to: 'pages#login'
+  get 'pages/signup', to: 'pages#signup'
 end
