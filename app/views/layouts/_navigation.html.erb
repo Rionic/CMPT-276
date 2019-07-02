@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+
+  <%= link_to image_tag("logo/SFU_logo.png", width:"60", height: "40", class: "d-inline-block align-top navbar-brand", alt: ""), root_path %>
+  <%= link_to "SFU Link", root_path, class:"navbar-brand"%>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <%= link_to "About", pages_about_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Contact Us", pages_contact_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item">
+      <% if logged_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Welcome!
+          </a>
+          <div class="dropdown-menu text_left">
+            <a class="dropdown-item" href="#">Profile</a>
+            <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item"%>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Get Started
+          </a>
+          <div class="dropdown-menu text_left">
+            <%= link_to "Log in", login_path, class: "dropdown-item"%>
+            <%= link_to "Sign up", signup_path, class: "dropdown-item"%>
+            <a class="dropdown-item" href="#">Other</a>
+          </div>
+        </li>
+      <% end %>
+    </li>
+  </ul>
+</nav>
