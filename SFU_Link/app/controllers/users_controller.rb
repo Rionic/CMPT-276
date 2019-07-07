@@ -6,15 +6,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to SFU Link #{@user.lastname}"
-      redirect_to root_path
+      flash[:success] = "Welcome to SFU Link #{@user.firstname}"
+
+      redirect_to login_path
     else
       render 'new'
     end
   end
 
+
+
   private
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :email, :password)
+    params.require(:user).permit(:firstname, :lastname, :gender, :email, :password)
   end
 end

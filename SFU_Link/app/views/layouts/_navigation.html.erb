@@ -13,15 +13,26 @@
     </li>
     <li class="nav-item">
       <% if logged_in? %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Welcome!
-          </a>
-          <div class="dropdown-menu text_left">
-            <a class="dropdown-item" href="#">Profile</a>
-            <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item"%>
-          </div>
-        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", logout_path, method: :delete, class: "nav-link"%>
+
+          </li>
+      <li class="navbar fixed-bottom navbar-dark bg-dark">
+
+
+      <a class="navbar-brand" href="#"a>
+        <%= link_to "Profile", pages_profile_path, class: "nav-link"%>
+
+
+      <a class="navbar-brand" href="#"a>
+      <%= link_to "Contact Us", pages_contact_path, class: "nav-link"%>
+
+
+      <a class="navbar-brand" href="#"a>
+      <%= link_to "Chat", pages_contact_path, class: "nav-link"%>
+    </li>
+
+
       <% else %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -33,6 +44,5 @@
           </div>
         </li>
       <% end %>
-    </li>
   </ul>
 </nav>

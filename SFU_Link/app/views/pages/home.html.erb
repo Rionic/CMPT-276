@@ -14,7 +14,10 @@
             <div class="carousel-caption text-left">
               <h1>SFU Link</h1>
               <p>Make Every Single Moment Count.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <%#p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p%>
+              <%= link_to '<button type="button">Sign Up Today</button>'.html_safe, signup_path %>
+              <%= link_to '<button type="button">Log In</button>'.html_safe, login_path %>
+
             </div>
           </div>
         </div>
@@ -59,7 +62,7 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="rounded-circle" src="http://ontarioheartcenter.ca/wp-content/uploads/2017/04/img-2.png" width="140" height="140">    
+          <img class="rounded-circle" src="http://ontarioheartcenter.ca/wp-content/uploads/2017/04/img-2.png" width="140" height="140">
           <h2>A Magic Moment</h2>
             <p> When someone you liked likes you back, it’s a match! You only get notifications when you’re matched with someone. Say goodbye to the embarrassment!</p>
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
@@ -102,7 +105,7 @@
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading">Not sure who's your type? </span></h2>
           <p class="lead">
-            Don't worry, we are here to help! 
+            Don't worry, we are here to help!
             <br></br>
             Based on your faculty, interests, and age preference, we will recommend you an outstanding individual.
           </p>
