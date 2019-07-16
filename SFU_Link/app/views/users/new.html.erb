@@ -21,10 +21,10 @@
       </div>
       <div class="form-group row">
         <div class="col-form-label col-sm-2">
-          <%= f.label :gender, "Gender" %>
+          <%= f.label :lastname, "Last Name" %>
         </div>
         <div class="col-sm-8">
-          <%= f.text_field :gender, class: "form-control", placeholder: "Please enter your gender", autofocus: true %>
+          <%= f.text_field :lastname, class: "form-control", placeholder: "Please enter your lastname", autofocus: true %>
         </div>
       </div>
       <div class="form-group row">
@@ -35,6 +35,14 @@
           <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
         </div>
       </div>
+      <div class="form-group row">
+        <div class="col-form-label col-sm-2">
+        </div>
+        <div class="col-sm-8">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm" %>
+        </div>
+      </div>
+      <div class="form-group row">
       <div class="form-group row">
         <div class="col-sm-offset-2 col-sm-10">
           <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
