@@ -13,4 +13,14 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def match
+    @users = User.all
+    @possible_partners = []
+    @users.each do |user|
+      if user.gender != current_user.gender
+        @possible_partners.push(user)
+      end
+    end
+  end
 end

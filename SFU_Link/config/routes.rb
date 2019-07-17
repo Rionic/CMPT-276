@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   get 'pages/about', to: 'pages#about'
   get 'pages/contact', to: 'pages#contact'
   get 'pages/profile', to: 'pages#profile'
+  get 'pages/match', to: 'pages#match'
+
 
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
-  post 'singup', to: 'sessions#create'
+  post 'signup', to: 'sessions#create'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
