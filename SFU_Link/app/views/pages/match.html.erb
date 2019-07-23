@@ -30,7 +30,7 @@ $(document).ready(function() {
   };
 
   function release() {
-
+    localStorage.clear()
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
       var selected_name = $card.find("p:first").text();
@@ -96,14 +96,14 @@ $(document).ready(function() {
   <header class="demo__header">Matching</header>
   <div class="demo__content">
     <div class="demo__card-cont">
-      <% @possible_partners.each_with_index do |candidate, i| %>
+      <% @possible_partners.each do |candidate| %>
         <div class="demo__card">
           <div class="demo__card__top <%= @colors.shuffle.first %>">
             <div class="demo__card__img"></div>
             <p class="demo__card__name"><%= candidate.firstname %> <%= candidate.lastname %></p>
           </div>
           <div class="demo__card__btm">
-            <p class="demo__card__we">Where the description goes</p>
+            <p class="demo__card__we"><%=candidate.description%></p>
           </div>
           <div class="demo__card__choice m--reject"></div>
           <div class="demo__card__choice m--like"></div>
