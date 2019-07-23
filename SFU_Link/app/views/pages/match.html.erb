@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 6;
+  var numOfCards = <%= @possible_partners.length %>;
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
@@ -21,10 +21,12 @@ $(document).ready(function() {
     $cardLike.css("opacity", likeOpacity);
   };
 
-  function check_match(name_1, name_2){
-    localStorage.setItem(name_1, name_2);
-    if (localStorage.getItem[name_2] == name_1) {
-      alert('Matched');
+  function check_match(current_name, selected_name){
+    localStorage.setItem(current_name, selected_name);
+    if ((localStorage.getItem[current_name] === selected_name)){
+      if (localStorage.getItem[selected_name] === current_name) {
+        alert('Matched');
+      };
     };
   };
 
@@ -33,10 +35,10 @@ $(document).ready(function() {
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
 
-      var selected_name = "<%= candidate.firstname.html_safe + " " + candidate.lastname.html_safe %>";
+      var name_list = document.getElementsByClassName("demo__card__name");
       var current_name = "<%= current_user.firstname.html_safe + " " + current_user.lastname.html_safe %>";
 
-      check_match(current_name, selected_name);
+      check_match(current_name, name_list[0].innerHTML);
 
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
@@ -95,14 +97,14 @@ $(document).ready(function() {
   <header class="demo__header">Matching</header>
   <div class="demo__content">
     <div class="demo__card-cont">
-      <% @possible_partners.each do |candidate| %>
+      <% @possible_partners.each_with_index do |candidate, i| %>
         <div class="demo__card">
           <div class="demo__card__top <%= @colors.shuffle.first %>">
             <div class="demo__card__img"></div>
             <p class="demo__card__name"><%= candidate.firstname %> <%= candidate.lastname %></p>
           </div>
           <div class="demo__card__btm">
-            <p class="demo__card__we">Where Description goes</p>
+            <p class="demo__card__we">Where the description goes</p>
           </div>
           <div class="demo__card__choice m--reject"></div>
           <div class="demo__card__choice m--like"></div>

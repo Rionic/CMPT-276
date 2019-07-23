@@ -17,7 +17,6 @@ class PagesController < ApplicationController
   def match
     @users = User.all
     @colors = ["purple", "blue", "indigo", "cyan", "lime", "brown"]
-    @matched_list = {}
     @possible_partners = []
     @users.each do |user|
       if user.gender != current_user.gender
