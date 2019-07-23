@@ -23,10 +23,9 @@ $(document).ready(function() {
 
   function check_match(current_name, selected_name){
     localStorage.setItem(current_name, selected_name);
-    if ((localStorage.getItem[current_name] === selected_name)){
-      if (localStorage.getItem[selected_name] === current_name) {
-        alert('Matched');
-      };
+
+    if (selected_name in localStorage){
+      alert("Matched\nNow put this information in the Matching table");
     };
   };
 
@@ -34,11 +33,11 @@ $(document).ready(function() {
 
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
-
+      var selected_name = $card.find("p:first").text();
       var name_list = document.getElementsByClassName("demo__card__name");
       var current_name = "<%= current_user.firstname.html_safe + " " + current_user.lastname.html_safe %>";
 
-      check_match(current_name, name_list[0].innerHTML);
+      check_match(current_name, selected_name);
 
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
